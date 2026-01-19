@@ -12,6 +12,8 @@ Este projeto desenvolve uma suite completa de **50 módulos computacionais em R*
 
 Cada módulo gera visualizações gráficas de alta qualidade utilizando `ggplot2` com um tema profissional padronizado.
 
+👉 **[Ver Walkthrough Detalhado e Galeria de Gráficos](walkthrough.md)** (Nota: este arquivo é um artefato interno gerado no desenvolvimento, consultar a pasta `output/` para os PNGs reais).
+
 ## 🚀 Como Executar
 O projeto é orquestrado pelo script `main.R`.
 
@@ -71,21 +73,40 @@ Regulação, Informação e Comportamento.
 
 ## 📐 Equações Fundamentais
 
-### Equilíbrio de Nash
-Um perfil de estratégias $s^* = (s_1^*, \dots, s_n^*)$ é um Equilíbrio de Nash se:
-$$ u_i(s_i^*, s_{-i}^*) \geq u_i(s_i, s_{-i}^*) \quad \forall s_i \in S_i, \forall i $$
+### 1. Equilíbrio de Nash
+Um perfil de estratégias $s^* = (s_1^*, \dots, s_n^*)$ é um Equilíbrio de Nash se nenhum jogador tem incentivo para desviar unilateralmente:
 
-### Duopólio de Cournot
-A quantidade de equilíbrio para custos simétricos $c$ e demanda $P = a - bQ$ é:
-$$ q_1^* = q_2^* = \frac{a - c}{3b} $$
+$$
+u_i(s_i^*, s_{-i}^*) \geq u_i(s_i, s_{-i}^*) \quad \forall s_i \in S_i, \forall i
+$$
 
-### Índice de Lerner (Poder de Mercado)
-Medida de poder de monopólio inversamente proporcional à elasticidade $\varepsilon$:
-$$ L = \frac{P - Cmg}{P} = -\frac{1}{\varepsilon} $$
+### 2. Duopólio de Cournot
+Para duas empresas com custos marginais simétricos $c$ enfrentando uma demanda linear inversa $P = a - bQ$, a quantidade ótima de produção para cada firma é:
 
-### Barganha de Rubinstein
-A fatia do proponente em um jogo de ofertas alternadas infinitas:
-$$ x^* = \frac{1 - \delta_2}{1 - \delta_1 \delta_2} $$
+$$
+q_1^* = q_2^* = \frac{a - c}{3b}
+$$
+
+### 3. Índice de Lerner (Poder de Mercado)
+O poder de mercado é medido pela capacidade de cobrar preços acima do custo marginal, sendo inversamente proporcional à elasticidade-preço da demanda ($\varepsilon$):
+
+$$
+L = \frac{P - Cmg}{P} = -\frac{1}{\varepsilon}
+$$
+
+### 4. Barganha de Rubinstein
+Em um jogo de negociação com ofertas alternadas e horizonte infinito, a parcela do excedente obtida pelo proponente (Jogador 1) em equilíbrio depende dos fatores de desconto ($\delta_1, \delta_2$):
+
+$$
+x^* = \frac{1 - \delta_2}{1 - \delta_1 \delta_2}
+$$
+
+### 5. Leilão de Primeiro Preço (Bid Shading)
+A estratégia Bayesiana Nash num leilão de primeiro preço com $N$ participantes e valorações uniformes é "sombrear" o lance:
+
+$$
+b^*(v) = \left( \frac{N-1}{N} \right) v
+$$
 
 ---
 
